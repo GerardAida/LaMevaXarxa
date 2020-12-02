@@ -10,6 +10,7 @@ import { PerfilUsuariComponent } from './perfil-usuari/perfil-usuari.component';
 import { LlistaPerfilsComponent } from './perfil-usuari/llista-perfils/llista-perfils.component';
 import { DetallUsuariComponent } from './perfil-usuari/detall-usuari/detall-usuari.component';
 import { RegistreUsuariComponent } from './perfil-usuari/registre-usuari/registre-usuari.component';
+import { LlistaUsuariComponent } from './panell-admin/llista-usuari/llista-usuari.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { RegistreUsuariComponent } from './perfil-usuari/registre-usuari/registr
     PerfilUsuariComponent,
     LlistaPerfilsComponent,
     DetallUsuariComponent,
-    RegistreUsuariComponent
+    RegistreUsuariComponent,
+    LlistaUsuariComponent
   ],
   imports: [
     BrowserModule,
