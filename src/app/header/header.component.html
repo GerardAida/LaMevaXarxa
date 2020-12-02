@@ -1,1 +1,14 @@
-<p>header works!</p>
+<header>
+  <h1 id="h1">La meva xarxa social</h1>
+</header>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" [routerLink]="['/perfil-usuari']" routerLinkActive="active">Perfil Usuari</a>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="navbar-brand" class="nav-link" [routerLink]="['/panell-admin']">Panell Admin</a>
+      </li>
+    </ul>
+  </div>
+</nav>
