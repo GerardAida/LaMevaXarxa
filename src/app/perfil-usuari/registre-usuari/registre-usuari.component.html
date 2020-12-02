@@ -1,1 +1,41 @@
-<p>registre-usuari works!</p>
+<div class="container-fluid my-4">
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <div class="card card-body">
+        <h3 class="text-center mb-4">Alta Event</h3>
+        <form>
+          <div class="form-group">
+            <input class="form-control" #vNom placeholder="Nom d'Usuari" type="text" name="Nom"/>
+            <p *ngIf="errors[0]">Tens que omplir aquet camp</p>
+          </div>
+          <div class="form-group">
+            <input class="form-control" #vCognom type="text" name="Lloc" placeholder="Cognom d'Usuari"/>
+            <p *ngIf="errors[1]">Tens que omplir aquet camp</p>
+          </div>
+          <div class="form-group">
+            <input class="form-control" #vEdat placeholder="Edat" name="Edat" type="number">
+            <p *ngIf="errors[5]">Sol s'accepta numeros</p>
+          </div>
+          <div class="form-group">
+            <input class="form-control" #vFoto placeholder="Foto" name="Foto" type="text">
+            <p *ngIf="errors[6]">Tens que omplir aquet camp</p>
+          </div>
+          <div class="form-group">
+            <textarea class="form-control" #vDescrip placeholder="Descripció" type="text" name="Descripcio"></textarea>
+            <p *ngIf="errors[2]">No se pot introduir menos de 4 caracters</p>
+          </div>
+          <div class="form-group">
+            <input class="form-control" #vCorreu placeholder="Correu de Contacte" name="mail" type="email">
+            <p *ngIf="errors[3]">No se a ficat @ y el .com por ejemplo .com</p>
+          </div>
+          <div>
+            <input type="checkbox" #vCheckbox name="politica" id="politica" required>
+            <label class="ml-1">Politica de privacitat</label>
+            <p *ngIf="errors[4]">Campo requerido</p>
+          </div>
+          <button class="btn btn-primary btn-block" (click)="EnviarDatos(vNombre.value, vLloc.value, vCorreu.value, vDescrip.value, vCheckbox.checked)" type="button"><b>Click Per Fer La Alta Event!</b></button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
