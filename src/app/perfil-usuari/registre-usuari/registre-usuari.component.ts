@@ -18,6 +18,7 @@ export class RegistreUsuariComponent implements OnInit {
   descripcio: string="";
   correu: string="";
   password: string="";
+  passwordc: string="";
 
   @Output() pasarArray = new EventEmitter<LlistaPefils>();
 
@@ -32,7 +33,13 @@ export class RegistreUsuariComponent implements OnInit {
         this.usuari = this.formBuilder.group({
 
           nom: ['', Validators.required],
-          correu: ['', [Validators.required, Validators.email]]
+          cognom: ['', Validators.required],
+          edat: ['', [Validators.required, Validators.pattern(/^-?(0|[1-9]\d*)?$/)]],
+          foto: ['', Validators.required],
+          descripcio: ['', [Validators.required, Validators.minLength(4)]],
+          correu: ['', [Validators.required, Validators.email]],
+          password: ['', Validators.required],
+          passwordc: ['', [Validators.required]]
 
         });
   }
@@ -42,10 +49,8 @@ export class RegistreUsuariComponent implements OnInit {
     return this.usuari.controls;
   }
 
-
   //metodo enviar
-  enviarDatos(nom,cognom,edat,foto,descripcio,correu,password){
-
+  enviarDatos(nom,cognom,edat,foto,descripcio,correu,passwordc){
     this.submitted = true;
     //si algun campo no cumple las condiciones
     if(this.usuari.invalid){
@@ -53,18 +58,18 @@ export class RegistreUsuariComponent implements OnInit {
     }
 
     //si todos los campos son correctos muestra la siguiente ventana emergente
-    this.GuardarDatos(nom,cognom,edat,foto,descripcio,correu,password);
-    Swal.fire('Los datos son correctos');
+    this.GuardarDatos(nom,cognom,edat,foto,descripcio,correu,passwordc);
+    Swal.fire('Registre Completat','Ja se ha registrar el teu usuari!','success');
   }
 
-  GuardarDatos(nom,cognom,edat,foto,descripcio,correu,password): void {
+  GuardarDatos(nom,cognom,edat,foto,descripcio,correu, passwordc): void {
     this.nom = nom;
     this.cognom = cognom;
     this.edat = edat;
     this.foto = foto;
     this.descripcio = descripcio;
     this.correu = correu;
-    this.password = password;
+    this.passwordc = passwordc;
     this.EnviarAlPadre();
   }
 
