@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LlistaUsuari } from 'src/app/model/llista-usuari.model';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-llista-usuari',
@@ -20,8 +21,29 @@ export class LlistaUsuariComponent implements OnInit {
     this.usuaris.push(new LlistaUsuari('Jannete','LeBlanc', '23', 'Amant del vi' ,'assets/img/usuaris-img/persona-5.png'));
   }
 
+
   eliminar(llista_usuari_model) {
-    this.usuaris.splice(llista_usuari_model,1);
+    Swal.fire({
+      title: 'Estas segur?',
+      text: "Aixo no es pot revertir!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Si, borra-ho!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.usuaris.splice(llista_usuari_model,1);
+        Swal.fire(
+          'Eliminat!',
+          'Ha estat eliminat.',
+          'success'
+        )
+      }
+    })
+
   }
+
+
 
 }

@@ -12,4 +12,5 @@ export class DetallUsuariComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
 }
