@@ -18,3 +18,4 @@ export class DetallUsuariComponent implements OnInit {
   selectUsuari(usuari: LlistaUsuari): void {
     this.usuariSelected = usuari;
   }
+}
