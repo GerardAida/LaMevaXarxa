@@ -2,7 +2,7 @@ import { Component, EventEmitter, OnInit, Output} from '@angular/core';
 import { FormsModule,FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LlistaPefils } from 'src/app/model/llista-perfils.model';
 import Swal from 'sweetalert2';
-import { validarQueSeanIguales } from './registre-usuari.validator';
+import { validarQueSonIguals } from './registre-usuari.validator';
 
 @Component({
   selector: 'app-registre-usuari',
@@ -40,16 +40,11 @@ export class RegistreUsuariComponent implements OnInit {
           descripcio: ['', [Validators.required, Validators.minLength(4)]],
           correu: ['', [Validators.required, Validators.email]],
           password: ['', Validators.required],
-          passwordc: ['', Validators.required]}, {
-            validators: validarQueSeanIguales
+          passwordc: ['', Validators.required],
+        },{
+          validator: validarQueSonIguals('password', 'passwordc')
 
         });
-  }
-
-  checarSiSonIguales(): boolean {
-    return this.usuari.hasError('noSonIguales') &&
-      this.usuari.get('password').dirty &&
-      this.usuari.get('passwordc').dirty;
   }
 
   // creamos un metodo para facilitar el acceso a los controles de formulario desde la plantilla

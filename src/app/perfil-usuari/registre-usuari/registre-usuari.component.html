@@ -90,9 +90,9 @@
             <input class="form-control" formControlName="passwordc" #vPasswordC placeholder="Repetir Contrasenya" name="passwordc" type="password" [ngClass]="{'is-invalid':submitted && f.passwordc.errors}">
 
             <!--Validar Confirmar Contrasenya-->
-            <div  class="invalid-feedback">
+            <div *ngIf = "submitted && f.passwordc.errors" class="invalid-feedback">
               <p *ngIf = "f.passwordc.errors.required">Aquest camp es obligatori</p>
-              <p *ngIf = "!checarSiSonIguales()">Oa</p>
+              <p *ngIf = "f.passwordc.errors.validarQueSonIguals">Oa</p>
             </div>
 
 
