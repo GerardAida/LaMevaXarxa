@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { LlistaUsuari } from 'src/app/model/llista-usuari.model';
 
 @Component({
@@ -8,14 +8,11 @@ import { LlistaUsuari } from 'src/app/model/llista-usuari.model';
 })
 export class DetallUsuariComponent implements OnInit {
 
-  usuariSelected: LlistaUsuari = null;
+  @Input() usuariSelected: LlistaUsuari;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  selectUsuari(usuari: LlistaUsuari): void {
-    this.usuariSelected = usuari;
-  }
 }

@@ -21,7 +21,7 @@ export class RegistreUsuariComponent implements OnInit {
   password: string="";
   passwordc: string="";
 
-  @Output() pasarArray = new EventEmitter<LlistaPefils>();
+  @Output() pasarUsuari = new EventEmitter<LlistaPefils>();
 
   constructor(private formBuilder: FormBuilder) { }
 
@@ -77,7 +77,7 @@ export class RegistreUsuariComponent implements OnInit {
   }
 
   EnviarAlPadre(): void {
-    this.pasarArray.emit(new LlistaPefils(this.nom, this.cognom, this.edat, this.foto, this.descripcio, this.correu, this.password));
+    this.pasarUsuari.emit(new LlistaPefils(this.nom, this.cognom, this.edat, this.foto, this.descripcio, this.correu, this.passwordc));
 
   }
 

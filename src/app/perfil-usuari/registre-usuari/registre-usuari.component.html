@@ -76,7 +76,7 @@
 
           <!--Contrasenya-->
           <div class="form-group">
-            <input class="form-control" formControlName="password" #vPassword placeholder="Contrasenya" name="password" type="password" [ngClass]="{'is-invalid':submitted && f.password.errors}">
+            <input class="form-control" formControlName="password" #vPassword placeholder="Contrasenya" name="password" type="password" [ngClass]="{'is-invalid':(submitted && f.password.errors) || (submitted && f.passwordc.errors)}">
 
             <!--Validar Contrasenya-->
             <div *ngIf = "submitted && f.password.errors" class="invalid-feedback">
@@ -92,7 +92,7 @@
             <!--Validar Confirmar Contrasenya-->
             <div *ngIf = "submitted && f.passwordc.errors" class="invalid-feedback">
               <p *ngIf = "f.passwordc.errors.required">Aquest camp es obligatori</p>
-              <p *ngIf = "f.passwordc.errors.validarQueSonIguals">Oa</p>
+              <p *ngIf = "f.passwordc.errors.validarQueSonIguals">Les contrasenyes no son iguals</p>
             </div>
 
 
