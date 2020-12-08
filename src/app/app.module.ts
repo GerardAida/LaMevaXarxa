@@ -11,6 +11,7 @@ import { LlistaPerfilsComponent } from './perfil-usuari/llista-perfils/llista-pe
 import { DetallUsuariComponent } from './perfil-usuari/detall-usuari/detall-usuari.component';
 import { RegistreUsuariComponent } from './perfil-usuari/registre-usuari/registre-usuari.component';
 import { LlistaUsuariComponent } from './panell-admin/llista-usuari/llista-usuari.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { LlistaUsuariComponent } from './panell-admin/llista-usuari/llista-usuar
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

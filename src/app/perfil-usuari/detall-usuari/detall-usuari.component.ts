@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { LlistaUsuari } from 'src/app/model/llista-usuari.model';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { LlistaPefils } from 'src/app/model/llista-perfils.model';
 
 @Component({
   selector: 'app-detall-usuari',
@@ -8,11 +9,19 @@ import { LlistaUsuari } from 'src/app/model/llista-usuari.model';
 })
 export class DetallUsuariComponent implements OnInit {
 
-  @Input() usuariSelected: LlistaUsuari;
+  @Input() usuariSelected: LlistaPefils;
 
-  constructor() { }
+  constructor(private modalService: NgbModal) { }
 
   ngOnInit(): void {
   }
+
+
+  canviarModel(modal) {
+    console.log(this.usuariSelected);
+    this.modalService.open(modal);
+  }
+
+
 
 }

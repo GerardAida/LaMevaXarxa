@@ -1,19 +1,17 @@
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalDetall">Veure més</button>
-<div class="modal fade" id="ModalDetall" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
+<button type="button" class="btn btn-primary" (click)="canviarModel(usuariModal)">Veure més</button>
+<ng-template #usuariModal>
+
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">{{usuariSelected.nom}}</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        <h5 class="modal-title" id="exampleModalLabel">{{usuariSelected.nom}} {{usuariSelected.cognom}}</h5>
       </div>
       <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Tancar</button>
+        <p>Edat: {{usuariSelected.edat}}</p>
+        <p>Correu: {{usuariSelected.correu}}</p>
+        <p>URL Foto: {{usuariSelected.foto}}</p>
+        <p>Password: {{usuariSelected.password}}</p>
+        <p>Descripció: {{usuariSelected.descripcio}}</p>
       </div>
     </div>
-  </div>
-</div>
+
+</ng-template>
