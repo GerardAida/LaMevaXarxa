@@ -41,7 +41,7 @@
 
           <!--Foto-->
           <div class="form-group">
-            <input class="form-control" formControlName="foto" #vFoto placeholder="Foto" name="Foto" type="text" [ngClass]="{'is-invalid':submitted && f.foto.errors}">
+            <input class="form-control" formControlName="foto" #vFoto placeholder="URL Foto" name="Foto" type="text" [ngClass]="{'is-invalid':submitted && f.foto.errors}">
 
             <!--Validar Foto-->
             <div *ngIf = "submitted && f.foto.errors" class="invalid-feedback">
@@ -99,7 +99,7 @@
           </div>
 
           <!--Botó per enviar les dades-->
-          <button class="btn btn-primary btn-block" (click)="enviarDatos(vNom.value, vCognom.value, vEdat.value, vFoto.value, vDescrip.value, vCorreu.value, vPasswordC.value)" type="button"><b>Click Per Fer La Alta Event!</b></button>
+          <button class="btn btn-outline-primary btn-block" (click)="enviarDatos(vNom.value, vCognom.value, vEdat.value, vFoto.value, vDescrip.value, vCorreu.value, vPasswordC.value)" type="button">Clic per registrar-se!</button>
         </form>
       </div>
     </div>
