@@ -1,37 +1,45 @@
 <div class="container-fluid my-4">
+
   <div class="row">
+
     <div class="col-md-6 mx-auto">
+
       <div class="card card-body">
+
         <h3 class="text-center mb-4">Alta Event</h3>
+
         <form [formGroup] = "usuari">
 
-          <!--Nom-->
+          <!-- Nom -->
           <div class="form-group">
+
             <input class="form-control" formControlName="nom" #vNom placeholder="Nom d'Usuari" type="text" name="Nom" [ngClass]="{'is-invalid':submitted && f.nom.errors}"/>
 
-            <!--Validar Nom-->
+            <!-- Validar Nom -->
             <div *ngIf = "submitted && f.nom.errors" class="invalid-feedback">
               <p *ngIf = "f.nom.errors.required">Aquest camp es obligatori</p>
             </div>
 
           </div>
 
-          <!--Cognom-->
+          <!-- Cognom -->
           <div class="form-group">
+
             <input class="form-control" formControlName="cognom" #vCognom type="text" name="Cognom" placeholder="Cognom d'Usuari" [ngClass]="{'is-invalid':submitted && f.cognom.errors}"/>
 
-            <!--Validar Cognom-->
+            <!-- Validar Cognom -->
             <div *ngIf = "submitted && f.cognom.errors" class="invalid-feedback">
               <p *ngIf = "f.cognom.errors.required">Aquest camp es obligatori</p>
             </div>
 
           </div>
 
-          <!--Edat-->
+          <!-- Edat -->
           <div class="form-group">
+
             <input class="form-control" formControlName="edat" #vEdat placeholder="Edat" name="Edat" type="number" [ngClass]="{'is-invalid':submitted && f.edat.errors}">
 
-            <!--Validar Edat-->
+            <!-- Validar Edat -->
             <div *ngIf = "submitted && f.edat.errors" class="invalid-feedback">
               <p *ngIf = "f.edat.errors.required">Aquest camp es obligatori</p>
               <p *ngIf = "f.edat.errors.pattern">Aquest camp  sol s'acepten numeros</p>
@@ -39,22 +47,24 @@
 
           </div>
 
-          <!--Foto-->
+          <!-- Foto -->
           <div class="form-group">
+
             <input class="form-control" formControlName="foto" #vFoto placeholder="URL Foto" name="Foto" type="text" [ngClass]="{'is-invalid':submitted && f.foto.errors}">
 
-            <!--Validar Foto-->
+            <!-- Validar Foto -->
             <div *ngIf = "submitted && f.foto.errors" class="invalid-feedback">
               <p *ngIf = "f.foto.errors.required">Aquest camp es obligatori</p>
             </div>
 
           </div>
 
-          <!--Descripcio-->
+          <!-- Descripcio -->
           <div class="form-group">
+
             <textarea class="form-control" formControlName="descripcio" #vDescrip placeholder="Descripció" type="text" name="descripcio" [ngClass]="{'is-invalid':submitted && f.descripcio.errors}"></textarea>
 
-            <!--Validar Descripcio-->
+            <!-- Validar Descripcio -->
             <div *ngIf = "submitted && f.descripcio.errors" class="invalid-feedback">
               <p *ngIf = "f.descripcio.errors.required">Aquest camp es obligatori</p>
               <p *ngIf = "f.descripcio.errors.minlength">Aquest camp a de tindre com a minim 4 caracters</p>
@@ -62,11 +72,12 @@
 
           </div>
 
-          <!--Correu-->
+          <!-- Correu -->
           <div class="form-group">
+
             <input class="form-control" formControlName="correu" #vCorreu placeholder="Correu de Contacte" name="correu" type="email" [ngClass]="{'is-invalid':submitted && f.correu.errors}">
 
-            <!--Validar Correu-->
+            <!-- Validar Correu -->
             <div *ngIf = "submitted && f.correu.errors" class="invalid-feedback">
               <p *ngIf = "f.correu.errors.required">Aquest camp es obligatori</p>
               <p *ngIf = "f.correu.errors.email">Falta un @</p>
@@ -74,34 +85,40 @@
 
           </div>
 
-          <!--Contrasenya-->
+          <!-- Contrasenya -->
           <div class="form-group">
+
             <input class="form-control" formControlName="password" #vPassword placeholder="Contrasenya" name="password" type="password" [ngClass]="{'is-invalid':(submitted && f.password.errors) || (submitted && f.passwordc.errors)}">
 
-            <!--Validar Contrasenya-->
+            <!-- Validar Contrasenya -->
             <div *ngIf = "submitted && f.password.errors" class="invalid-feedback">
               <p *ngIf = "f.password.errors.required">Aquest camp es obligatori</p>
             </div>
 
           </div>
 
-          <!--Confirmar Contrasenya-->
+          <!-- Confirmar Contrasenya -->
           <div class="form-group">
+
             <input class="form-control" formControlName="passwordc" #vPasswordC placeholder="Repetir Contrasenya" name="passwordc" type="password" [ngClass]="{'is-invalid':submitted && f.passwordc.errors}">
 
-            <!--Validar Confirmar Contrasenya-->
+            <!-- Validar Confirmar Contrasenya -->
             <div *ngIf = "submitted && f.passwordc.errors" class="invalid-feedback">
               <p *ngIf = "f.passwordc.errors.required">Aquest camp es obligatori</p>
               <p *ngIf = "f.passwordc.errors.validarQueSonIguals">Les contrasenyes no son iguals</p>
             </div>
 
-
           </div>
 
-          <!--Botó per enviar les dades-->
+          <!-- Botó per enviar les dades -->
           <button class="btn btn-outline-primary btn-block" (click)="enviarDatos(vNom.value, vCognom.value, vEdat.value, vFoto.value, vDescrip.value, vCorreu.value, vPasswordC.value)" type="button">Clic per registrar-se!</button>
+
         </form>
+
       </div>
+
     </div>
+
   </div>
+
 </div>

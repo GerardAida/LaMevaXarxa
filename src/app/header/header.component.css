@@ -1,3 +1,5 @@
+
+/* Estil del header de la pagina */
 header {
   background-image: url(/assets/img/banner-xarxa.png);
   color: white;
@@ -6,6 +8,7 @@ header {
   text-transform: uppercase;
 }
 
+/* Estil que es troba al text del header */
 #h1 {
   padding-top: 180px;
   font-size: 60px !important;

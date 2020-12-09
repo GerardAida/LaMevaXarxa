@@ -25,12 +25,11 @@ export class RegistreUsuariComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder) { }
 
-  //creo la variable usuari donde almaceno los datos que recibo del formulario
   usuari: FormGroup;
   submitted = false;
 
   ngOnInit(): void {
-        //pongo las condiciones de los campos
+        // Condicions dels camps
         this.usuari = this.formBuilder.group({
 
           nom: ['', Validators.required],
@@ -41,31 +40,40 @@ export class RegistreUsuariComponent implements OnInit {
           correu: ['', [Validators.required, Validators.email]],
           password: ['', Validators.required],
           passwordc: ['', Validators.required],
+
         },{
+          // Validar que les contrasenyes son IDENTIQUES
           validator: validarQueSonIguals('password', 'passwordc')
 
         });
+
   }
 
-  // creamos un metodo para facilitar el acceso a los controles de formulario desde la plantilla
   get f(){
+
     return this.usuari.controls;
+
   }
 
-  //metodo enviar
+  // Enviar dades
   enviarDatos(nom,cognom,edat,foto,descripcio,correu,passwordc){
+
     this.submitted = true;
-    //si algun campo no cumple las condiciones
+
     if(this.usuari.invalid){
+
       return;
+
     }
 
-    //si todos los campos son correctos muestra la siguiente ventana emergente
     this.GuardarDatos(nom,cognom,edat,foto,descripcio,correu,passwordc);
     Swal.fire('Registre Completat','Ja se ha registrar el teu usuari!','success');
+
   }
 
+  // Guardem dades
   GuardarDatos(nom,cognom,edat,foto,descripcio,correu, passwordc): void {
+
     this.nom = nom;
     this.cognom = cognom;
     this.edat = edat;
@@ -74,9 +82,12 @@ export class RegistreUsuariComponent implements OnInit {
     this.correu = correu;
     this.passwordc = passwordc;
     this.EnviarAlPadre();
+
   }
 
+  // Enviem les dades al pare
   EnviarAlPadre(): void {
+
     this.pasarUsuari.emit(new LlistaPefils(this.nom, this.cognom, this.edat, this.foto, this.descripcio, this.correu, this.passwordc));
 
   }

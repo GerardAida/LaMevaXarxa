@@ -16,8 +16,8 @@ export class DetallUsuariComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
   canviarModel(modal) {
+    // Obre el modal del corresponen detalls d'usuari
     console.log(this.usuariSelected);
     this.modalService.open(modal);
   }

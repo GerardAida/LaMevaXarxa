@@ -14,6 +14,7 @@ export class LlistaUsuariComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    // Usuaris
     this.usuaris.push(new LlistaUsuari('Samuel','Orellana Pi', '22', 'Gran persona' ,'assets/img/usuaris-img/persona-1.jpg'));
     this.usuaris.push(new LlistaUsuari('Josep','Guardia Peralta', '45', 'Apasionat de les motos' ,'assets/img/usuaris-img/persona-2.jpg'));
     this.usuaris.push(new LlistaUsuari('Anna','Silva Martinez', '20', 'Autodidacta' ,'assets/img/usuaris-img/persona-3.jpg'));
@@ -21,8 +22,9 @@ export class LlistaUsuariComponent implements OnInit {
     this.usuaris.push(new LlistaUsuari('Jannete','LeBlanc', '23', 'Amant del vi' ,'assets/img/usuaris-img/persona-5.png'));
   }
 
-
+  // Boto eliminar
   eliminar(llista_usuari_model) {
+    // SweetAlert2
     Swal.fire({
       title: 'Estas segur?',
       text: "Aixo no es pot revertir!",
@@ -33,6 +35,7 @@ export class LlistaUsuariComponent implements OnInit {
       confirmButtonText: 'Si, borra-ho!'
     }).then((result) => {
       if (result.isConfirmed) {
+        // Eliminacio de l'usuari
         this.usuaris.splice(llista_usuari_model,1);
         Swal.fire(
           'Eliminat!',

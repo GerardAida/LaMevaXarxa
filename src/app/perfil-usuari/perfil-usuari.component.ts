@@ -1,5 +1,4 @@
-import { Component, EventEmitter, Input, OnInit } from '@angular/core';
-import { LlistaPefils } from '../model/llista-perfils.model';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-perfil-usuari',
